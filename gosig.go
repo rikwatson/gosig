@@ -262,10 +262,6 @@ func GlobalDecl(decl *ast.GenDecl, kind string, vec *vector.Vector) {
 		vs := spec.(*ast.ValueSpec)
 		if vs.Type != nil {
 			last_type = TypeExpr(vs.Type)
-		} else {
-			for _, v := range vs.Values {
-				fmt.Println(Typeof(v), v)
-			}
 		}
 		cur_type = last_type
 		for _, name := range vs.Names {
